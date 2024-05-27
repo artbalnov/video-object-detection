@@ -173,7 +173,7 @@ def main():
   parser.add_argument(
       '--videoFile', help='Path to thevideo file', required=False, type=str, default='data/James.mp4')
   parser.add_argument(
-      '--maxFPS', help='Max FPS, for video file use video FPS', required=False, type=int, default=30)
+      '--maxFPS', help='Max FPS, for video files please use video FPS value', required=False, type=int, default=25)
   parser.add_argument(
       '--frameWidth',
       help='Width of frame to capture from camera.',
