@@ -137,7 +137,9 @@ def run(model_path: str, max_results: int, score_threshold: float,
     timeDiff = time.time() - now
     if (timeDiff < 1.0/(max_fps)): time.sleep( 1.0/(max_fps) - timeDiff )
 
-  detector.close()
+  if detector !=None: 
+    detector.close()
+
   cap.release()
   cv2.destroyAllWindows()
 
@@ -169,7 +171,7 @@ def main():
   parser.add_argument(
       '--cameraId', help='camera ID', required=False, type=int, default=-1)
   parser.add_argument(
-      '--videoFile', help='Path to thevideo file', required=False, type=str, default='James.mp4')
+      '--videoFile', help='Path to thevideo file', required=False, type=str, default='data/James.mp4')
   parser.add_argument(
       '--maxFPS', help='Max FPS, for video file use video FPS', required=False, type=int, default=30)
   parser.add_argument(
